@@ -8,4 +8,5 @@ parts:
   chapters:
   - file: notebooks/01 - Introdução
   - file: notebooks/02 - Modelos Lineares
+  - file: notebooks/04 - Seleção de Modelo
   
