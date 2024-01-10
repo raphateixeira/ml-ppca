@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Lectures
+  chapters:
+  - file: notebooks/01 - Introduction
+  - file: notebooks/02 - Linear Models
+  
