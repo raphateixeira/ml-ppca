@@ -3,8 +3,7 @@
 
 title: Aprendizagem de Máquina
 author: PPCA
-logo: notebooks/images/banner.jpeg
-copyright: "2023. CC0 Licensed - Use as you like"  # Copyright year to be placed in the footer
+logo: notebooks/images/ppca.png
 
 
 # Force re-execution of notebooks on each build.
@@ -44,5 +43,5 @@ execute:
 #  favicon: notebooks/images/favicon.png
 #  extra_navbar: ""
   
-#launch_buttons:
-#  colab_url: "https://colab.research.google.com"
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
