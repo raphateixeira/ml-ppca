@@ -8,5 +8,11 @@ O conteúdo da disciplina foi codificado em formato de notebooks buscando agrega
 |   | Notebooks          |
 |:--|:-------------------|
 | 1 | [Introdução](https://raphateixeira.github.io/ml-ppca/notebooks/01%20-%20Introdu%C3%A7%C3%A3o.html)
-| 2 | [Modelos Lineares](https://raphateixeira.github.io/ml-ppca/notebooks/02%20-%20Modelos%20Lineares.html)  
+| 2 | [Modelos Lineares](https://raphateixeira.github.io/ml-ppca/notebooks/02%20-%20Modelos%20Lineares.html) 
+| 3 | [Seleção de Modelo]() 
+
+# Aplicações
+
+- Problema de classificação
+- Problema de regressão
 

@@ -5,7 +5,6 @@ title: Aprendizagem de Máquina
 author: PPCA
 logo: notebooks/images/ppca.png
 
-
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
