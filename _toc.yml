@@ -4,8 +4,8 @@
 format: jb-book
 root: intro
 parts:
-- caption: Lectures
+- caption: Aulas
   chapters:
-  - file: notebooks/01 - Introduction
-  - file: notebooks/02 - Linear Models
+  - file: notebooks/01 - Introdução
+  - file: notebooks/02 - Modelos Lineares
   

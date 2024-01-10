@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 2: Linear models &#8212; Aprendizagem de Máquina</title>
+    <title>Aula 2: Modelos lineares &#8212; Aprendizagem de Máquina</title>
   
   
   
@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/02 - Modelos Lineares';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Aula 1: Introdução" href="01%20-%20Introdu%C3%A7%C3%A3o.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,7 +177,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aulas</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01%20-%20Introdu%C3%A7%C3%A3o.html">Aula 1: Introdução</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aula 2: Modelos lineares</a></li>
+
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -313,7 +320,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lecture 2: Linear models</h1>
+    <h1>Aula 2: Modelos lineares</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -323,8 +330,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lecture 2: Linear models</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-and-definitions">Notation and Definitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aula 2: Modelos lineares</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicoes-e-notacoes">DefiniçÕes e notações</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">Basic operations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradients">Gradients</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions-and-probabilities">Distributions and Probabilities</a></li>
@@ -406,10 +413,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-2-linear-models">
-<h1>Lecture 2: Linear models<a class="headerlink" href="#lecture-2-linear-models" title="Permalink to this heading">#</a></h1>
-<p><strong>Basics of modeling, optimization, and regularization</strong></p>
-<p>Joaquin Vanschoren</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="aula-2-modelos-lineares">
+<h1>Aula 2: Modelos lineares<a class="headerlink" href="#aula-2-modelos-lineares" title="Permalink to this heading">#</a></h1>
+<p><strong>Modelagem, otimização e regularização</strong></p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -439,17 +445,15 @@ document.write(`
 </div>
 </details>
 </div>
-<section id="notation-and-definitions">
-<h2>Notation and Definitions<a class="headerlink" href="#notation-and-definitions" title="Permalink to this heading">#</a></h2>
+<section id="definicoes-e-notacoes">
+<h2>DefiniçÕes e notações<a class="headerlink" href="#definicoes-e-notacoes" title="Permalink to this heading">#</a></h2>
+<p>A fundamentação matemática para representar os dados, as funções e os parâmetros dos modelos de AM se utilizam dos seguintes elementos:</p>
 <ul class="simple">
-<li><p>A <em>scalar</em> is a simple numeric value, denoted by an italic letter: <span class="math notranslate nohighlight">\(x=3.24\)</span></p></li>
-<li><p>A <em>vector</em> is a 1D ordered array of <em>n</em> scalars, denoted by a bold letter: <span class="math notranslate nohighlight">\(\mathbf{x}=[3.24, 1.2]\)</span></p>
+<li><p>Um <em>escalar</em> é um valor numérico simples, podendo ser denotado por uma letra grega <span class="math notranslate nohighlight">\(\alpha\)</span></p></li>
+<li><p>Um <em>vetor</em> é um arranjo <span class="math notranslate nohighlight">\(n\)</span> de escalares ordenados em uma dimensão, vetores costumam ser representados por letras em negrito:
+$<span class="math notranslate nohighlight">\(\mathbf{x}=[x_0, x_1, \ldots, x_{n-1}]\)</span>$</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(x_i\)</span> denotes the <span class="math notranslate nohighlight">\(i\)</span>th element of a vector, thus <span class="math notranslate nohighlight">\(x_0 = 3.24\)</span>.</p>
-<ul>
-<li><p>Note: some other courses use <span class="math notranslate nohighlight">\(x^{(i)}\)</span> notation</p></li>
-</ul>
-</li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span> denota o <span class="math notranslate nohighlight">\(i\)</span>-ésimo elemento do vetor.</p></li>
 </ul>
 </li>
 <li><p>A <em>set</em> is an <em>unordered</em> collection of unique elements, denote by caligraphic capital: <span class="math notranslate nohighlight">\(\mathcal{S}=\{3.24, 1.2\}\)</span></p></li>
@@ -464,6 +468,9 @@ document.write(`
 </ul>
 </li>
 </ul>
+<p>Por exemplo, a temperatura máxima medida nos últimos sete dias da semana em uma determinada localidade pode ser representada por:</p>
+<div class="math notranslate nohighlight">
+\[T = [21.3, 24.5, 25.6, 24.3, 23.2, 22.7, 21.8]\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathbf{X}^{n \times p}\)</span>, an <span class="math notranslate nohighlight">\(n \times p\)</span> matrix, can represent <span class="math notranslate nohighlight">\(n\)</span> data points in a <span class="math notranslate nohighlight">\(p\)</span>-dimensional space</p>
 <ul>
@@ -3156,6 +3163,15 @@ th {font-size: 16px}
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="01%20-%20Introdu%C3%A7%C3%A3o.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Aula 1: Introdução</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -3172,8 +3188,8 @@ th {font-size: 16px}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lecture 2: Linear models</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-and-definitions">Notation and Definitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aula 2: Modelos lineares</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicoes-e-notacoes">DefiniçÕes e notações</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">Basic operations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradients">Gradients</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions-and-probabilities">Distributions and Probabilities</a></li>

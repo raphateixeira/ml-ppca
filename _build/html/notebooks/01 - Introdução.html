@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 1: Introduction &#8212; Aprendizagem de Máquina</title>
+    <title>Aula 1: Introdução &#8212; Aprendizagem de Máquina</title>
   
   
   
@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/01 - Introdução';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Aula 2: Modelos lineares" href="02%20-%20Modelos%20Lineares.html" />
+    <link rel="prev" title="Aprendizagem de máquina" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,7 +178,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aulas</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aula 1: Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02%20-%20Modelos%20Lineares.html">Aula 2: Modelos lineares</a></li>
+
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -313,7 +321,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lecture 1: Introduction</h1>
+    <h1>Aula 1: Introdução</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -323,13 +331,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-machine-learning">Why Machine Learning?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">What is Machine Learning?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductive-bias">Inductive bias</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-vs-statistics">Machine learning vs Statistics</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning">Types of machine learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-aprendizagem-de-maquina">O que é aprendizagem de máquina?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-aprendizagem-de-maquina">Tipos de aprendizagem de máquina</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-machine-learning">Supervised Machine Learning</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#example-flower-classification">Example: Flower classification</a></li>
@@ -383,10 +386,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-1-introduction">
-<h1>Lecture 1: Introduction<a class="headerlink" href="#lecture-1-introduction" title="Permalink to this heading">#</a></h1>
-<p><strong>A few useful things to know about machine learning</strong></p>
-<p>Joaquin Vanschoren</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="aula-1-introducao">
+<h1>Aula 1: Introdução<a class="headerlink" href="#aula-1-introducao" title="Permalink to this heading">#</a></h1>
+<p><strong>Uma conversa sobre aprendizagem de máquina</strong></p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -415,118 +417,57 @@ document.write(`
 </div>
 </details>
 </div>
-<section id="why-machine-learning">
-<h2>Why Machine Learning?<a class="headerlink" href="#why-machine-learning" title="Permalink to this heading">#</a></h2>
+<p>Computadores são máquinas que requerem um detalhamento preciso das tarefas que devem executar. Por exemplo, uma calculadora (um computador) necessita de uma codificação exata das operações matemáticas. Como as regras da aritmética são claras e simples, podemos codificá-las, inserir dados no código e obter resultados desejados.</p>
+<p>Ocorre que problemas que nós humanos resolvemos com relativa facilidade, como reconhecer um rosto familiar, distinguir espécies de animais, e outros mais sofisticados como dirigir um automóvel e definir o preço de um objeto, são executadas com um grau elevado de abstração: Nós não temos regras claras e bem definidas para resolvê-los, simplesmente aprendemos a executar estas tarefas e as executamos com algum grau de habilidade. Mesmo por que, nestas classes de problemas demandaríamos de uma quantidade e uma complexidade grande de regras, o que tornaria inviável a sua codificação computacional.</p>
+<p>A aprendizagem de máquina é um ramo da inteligência artificial que visa criar programas que aprendem a executar estas tarefas tipicamente realizadas por seres humanos. Esta tecnologia está por trás de recursos que usamos no dia a dia, tais como:</p>
 <ul class="simple">
-<li><p>Search engines (e.g. Google)</p></li>
-<li><p>Recommender systems (e.g. Netflix)</p></li>
-<li><p>Automatic translation (e.g. Google Translate)</p></li>
-<li><p>Speech understanding (e.g. Siri, Alexa)</p></li>
-<li><p>Game playing (e.g. AlphaGo)</p></li>
-<li><p>Self-driving cars</p></li>
-<li><p>Personalized medicine</p></li>
-<li><p>Progress in all sciences: Genetics, astronomy, chemistry, neurology, physics,…</p></li>
+<li><p>Buscadores da internet (Google);</p></li>
+<li><p>Filtro de spam nos e-mails;</p></li>
+<li><p>Sistemas de recomendação de conteúdo (Netflix, You-tube)</p></li>
+<li><p>Tradução de texto (e.g. Google Translate)</p></li>
+<li><p>Reconhecimento de voz (e.g. Siri, Alexa)</p></li>
 </ul>
-</section>
-<section id="what-is-machine-learning">
-<h2>What is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Learn to perform a task, based on experience (examples) <span class="math notranslate nohighlight">\(X\)</span>, minimizing error <span class="math notranslate nohighlight">\(\mathcal{E}\)</span></p>
-<ul>
-<li><p>E.g. recognizing a person in an image as accurately as possible</p></li>
-</ul>
-</li>
-<li><p>Often, we want to learn a function (model) <span class="math notranslate nohighlight">\(f\)</span> with some model parameters <span class="math notranslate nohighlight">\(\theta\)</span> that produces the right output <span class="math notranslate nohighlight">\(y\)</span></p></li>
-</ul>
+<p>Pense nestas tarefas. Como você reconhece um comando de voz? Talvez saibamos bem como o som propaga, como atinge nossos tímpanos e até temos como absolutamente natural a ideia (quase milagrosa) de que nosso cérebro seja capaz de <em>reconhecer</em> e <em>compreender</em> um comando dado. Mas tentar criar um código computacional que execute esta tarefa exigiria uma complexidade que extrapolaria a habilidade dos melhores programadores.</p>
+<p>O seu celular possui um programa que faz isso. Como este programa é criado?</p>
+<section id="o-que-e-aprendizagem-de-maquina">
+<h2>O que é aprendizagem de máquina?<a class="headerlink" href="#o-que-e-aprendizagem-de-maquina" title="Permalink to this heading">#</a></h2>
+<p>A aprendizagem humana de tarefas cognitivas, requer o contato direto com exemplos, ou dados, do problema. Esta perspecitva é tomada pela aprendizagem de máquina pelo registro de dados medidos, representados de maneira geral e abstrata pelo conjunto <span class="math notranslate nohighlight">\(X\)</span>, que guardam a informação subjacente das intrincadas relações entre as variáveis do problema.</p>
+<p>O algoritmo que implementa a solução da tarefa é representada por uma função matemática <span class="math notranslate nohighlight">\(f(\cdot)\)</span> que recebe os dados e devolve alguma resposta <span class="math notranslate nohighlight">\(y\)</span> associada, ou seja:</p>
 <div class="math notranslate nohighlight">
-\[f_{\theta}(X) = y\]</div>
+\[ y = f_{\theta}(X) \]</div>
+<p>Note que <span class="math notranslate nohighlight">\(\theta\)</span> representa os parâmetros de <span class="math notranslate nohighlight">\(f\)</span>, ou o conjunto de números que parametrizam a função.</p>
+<p>A capacidade de <span class="math notranslate nohighlight">\(f_{\theta}\)</span> em dar respostas <span class="math notranslate nohighlight">\(y\)</span> apropriadas para um determinado <span class="math notranslate nohighlight">\(X\)</span> deve ser medido para se avaliar quão boa é a função na execução da tarefa. Isto é realizado tipicamente pela função <span class="math notranslate nohighlight">\(E(f_{\theta}(X))\)</span>, que mede o erro cometido por <span class="math notranslate nohighlight">\(f\)</span>, paramerizada por um dado <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>Neste contexto, a aprendizagem de máquina poderia ser definida como:</p>
+<ul class="simple">
+<li><p>Aprender a executar uma tarefa, baseada em dados <span class="math notranslate nohighlight">\(X\)</span>, minimizando o erro <span class="math notranslate nohighlight">\(E(f_{\theta}(X))\)</span></p></li>
+</ul>
+<p>A minimização do erro está associada a escolha apropriada dos parâmetros <span class="math notranslate nohighlight">\(\theta\)</span>, buscando ajustar <span class="math notranslate nohighlight">\(f_\theta\)</span> aos dados <span class="math notranslate nohighlight">\(X\)</span>, de modo que a aprendizagem possa ser expresso como um problema de otimização:</p>
 <div class="math notranslate nohighlight">
-\[\underset{\theta}{\operatorname{argmin}} \mathcal{E}(f_{\theta}(X))\]</div>
-<ul class="simple">
-<li><p>Usually part of a <em>much</em> larger system that provides the data <span class="math notranslate nohighlight">\(X\)</span> in the right form</p>
-<ul>
-<li><p>Data needs to be collected, cleaned, normalized, checked for data biases,…</p></li>
-</ul>
-</li>
-</ul>
-<section id="inductive-bias">
-<h3>Inductive bias<a class="headerlink" href="#inductive-bias" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>In practice, we have to put assumptions into the model: <em>inductive bias</em> <span class="math notranslate nohighlight">\(b\)</span></p>
-<ul>
-<li><p>What should the model look like?</p>
-<ul>
-<li><p>Mimick human brain: Neural Networks</p></li>
-<li><p>Logical combination of inputs: Decision trees, Linear models</p></li>
-<li><p>Remember similar examples: Nearest Neighbors, SVMs</p></li>
-<li><p>Probability distribution: Bayesian models</p></li>
-</ul>
-</li>
-<li><p>User-defined settings (hyperparameters)</p>
-<ul>
-<li><p>E.g. depth of tree, network architecture</p></li>
-</ul>
-</li>
-<li><p>Assuptions about the data distribution, e.g. <span class="math notranslate nohighlight">\(X \sim N(\mu,\sigma)\)</span></p></li>
-</ul>
-</li>
-<li><p>We can <em>transfer</em> knowledge from previous tasks: <span class="math notranslate nohighlight">\(f_1, f_2, f_3, ... \Longrightarrow f_{new}\)</span></p>
-<ul>
-<li><p>Choose the right model, hyperparameters</p></li>
-<li><p>Reuse previously learned values for model parameters <span class="math notranslate nohighlight">\(\theta\)</span></p></li>
-</ul>
-</li>
-<li><p>In short:</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\underset{\theta,b}{\operatorname{argmin}} \mathcal{E}(f_{\theta, b}(X))\]</div>
+\[\theta^* = \underset{\theta}{\operatorname{min}} \;\;E(f_{\theta}(X))\]</div>
+<p>Sendo <span class="math notranslate nohighlight">\(\theta^*\)</span> o valor ótimo para os parâmetros, aquele que devolve o menor erro.</p>
 </section>
-<section id="machine-learning-vs-statistics">
-<h3>Machine learning vs Statistics<a class="headerlink" href="#machine-learning-vs-statistics" title="Permalink to this heading">#</a></h3>
+<section id="tipos-de-aprendizagem-de-maquina">
+<h2>Tipos de aprendizagem de máquina<a class="headerlink" href="#tipos-de-aprendizagem-de-maquina" title="Permalink to this heading">#</a></h2>
+<p>A área de aprendizagem de máquina</p>
 <ul class="simple">
-<li><p>See Breiman (2001): Statistical modelling: The two cultures</p></li>
-<li><p>Both aim to make predictions of natural phenomena:
-<img src="https://raw.githubusercontent.com/ML-course/master/master/notebooks/images/00_stat1.png" alt="ml" style="margin-left:10px; width:200px"/></p></li>
-<li><p>Statistics:</p>
+<li><p><strong>Aprendizagem supervisionada</strong>: aprende um <em>modelo</em> <span class="math notranslate nohighlight">\(f\)</span> a partir de um conjunto de dados rotulados <span class="math notranslate nohighlight">\((X,y)\)</span>.</p>
 <ul>
-<li><p>Help humans understand the world</p></li>
-<li><p>Assume data is generated according to an understandable model
-<img src="https://raw.githubusercontent.com/ML-course/master/master/notebooks/images/00_stat2.png" alt="ml" style="margin-left:10px; width:200px"/></p></li>
+<li><p>Dada uma nova entrada <span class="math notranslate nohighlight">\(X\)</span>, utiliza-se o modelo para se predizer (prever) a nova saída <span class="math notranslate nohighlight">\(y\)</span></p></li>
 </ul>
 </li>
-<li><p>Machine learning:</p>
+<li><p><strong>Aprendizagem não-supervisionada</strong>: explora padrões na estrutura dos dados <span class="math notranslate nohighlight">\(X\)</span> para extrair informação útil.</p>
 <ul>
-<li><p>Automate a task entirely (partially <em>replace</em> the human)</p></li>
-<li><p>Assume that the data generation process is unknown</p></li>
-<li><p>Engineering-oriented, less (too little?) mathematical theory
-<img src="https://raw.githubusercontent.com/ML-course/master/master/notebooks/images/00_stat3.png" alt="ml" style="margin-left:10px; width:200px"/></p></li>
+<li><p>Dadas entradas <em>X</em>, encontre exemplos discrepantes, similares, …</p></li>
 </ul>
 </li>
-</ul>
-</section>
-</section>
-<section id="types-of-machine-learning">
-<h2>Types of machine learning<a class="headerlink" href="#types-of-machine-learning" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Supervised Learning</strong>: learn a <em>model</em> <span class="math notranslate nohighlight">\(f\)</span> from <em>labeled data</em> <span class="math notranslate nohighlight">\((X,y)\)</span> (ground truth)</p>
-<ul>
-<li><p>Given a new input <em>X</em>, predict the right output <em>y</em></p></li>
-<li><p>Given examples of stars and galaxies, identify new objects in the sky</p></li>
-</ul>
-</li>
-<li><p><strong>Unsupervised Learning</strong>: explore the structure of the data (X) to extract meaningful information</p>
-<ul>
-<li><p>Given inputs <em>X</em>, find which ones are special, similar, anomalous, …</p></li>
-</ul>
-</li>
-<li><p><strong>Semi-Supervised Learning</strong>: learn a model from (few) labeled and (many) unlabeled examples</p>
+<li><p><strong>Aprendizagem semi-supervisionada</strong>: aprende um modelo com (poucos) exemplos rotulados e (muitos) exemplos não-rotulados</p>
 <ul>
 <li><p>Unlabeled examples add information about which new examples are likely to occur</p></li>
 </ul>
 </li>
-<li><p><strong>Reinforcement Learning</strong>: develop an agent that improves its performance based on interactions with the environment</p></li>
+<li><p><strong>Aprendizagem por reforço</strong>: Um agente aprende a medida que interage com o ambiente;</p></li>
 </ul>
-<p>Note: Practical ML systems can combine many types in one system.</p>
+<p>Um sistema baseado em aprendizagem de máquina pode combinar muitas destas formulações.</p>
 <section id="supervised-machine-learning">
 <h3>Supervised Machine Learning<a class="headerlink" href="#supervised-machine-learning" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -1329,6 +1270,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Aprendizagem de máquina</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02%20-%20Modelos%20Lineares.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Aula 2: Modelos lineares</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1345,13 +1304,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-machine-learning">Why Machine Learning?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">What is Machine Learning?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductive-bias">Inductive bias</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-vs-statistics">Machine learning vs Statistics</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning">Types of machine learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-aprendizagem-de-maquina">O que é aprendizagem de máquina?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-aprendizagem-de-maquina">Tipos de aprendizagem de máquina</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-machine-learning">Supervised Machine Learning</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#example-flower-classification">Example: Flower classification</a></li>
