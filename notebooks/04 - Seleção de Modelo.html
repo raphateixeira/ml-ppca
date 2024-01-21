@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 4: Model Selection &#8212; Aprendizagem de Máquina</title>
+    <title>04 - Seleção de Modelo &#8212; Aprendizagem de Máquina</title>
   
   
   
@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="01%20-%20Introdu%C3%A7%C3%A3o.html">Aula 1: Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02%20-%20Modelos%20Lineares.html">Aula 2: Modelos lineares</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 4: Model Selection</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">04 - Seleção de Modelo</a></li>
 </ul>
 
     </div>
@@ -352,7 +352,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lecture 4: Model Selection</h1>
+    <h1>04 - Seleção de Modelo</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,7 +408,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-curve">Precision-Recall curve</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-recall-precisao">Curva recall - precisão</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection">Model selection</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selecao-de-modelo">Seleção de modelo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Seleção de modelo</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#efeitos-de-hiperparametros">Efeitos de hiperparâmetros</a></li>
 </ul>
 </li>
@@ -416,8 +416,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-operacionais-do-receptor-roc">Características Operacionais do Receptor (ROC)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacao">Visualização</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Model selection</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Seleção de modelo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Model selection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Seleção de modelo</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-class-auroc-or-auprc">Multi-class AUROC (or AUPRC)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auroc-multiclasse-ou-auprc">AUROC multiclasse (ou AUPRC)</a></li>
 </ul>
@@ -474,8 +474,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-4-model-selection">
-<h1>Lecture 4: Model Selection<a class="headerlink" href="#lecture-4-model-selection" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="selecao-de-modelo">
+<h1>04 - Seleção de Modelo<a class="headerlink" href="#selecao-de-modelo" title="Permalink to this heading">#</a></h1>
 <p><strong>Can I trust you?</strong></p>
 <p>Joaquin Vanschoren</p>
 <div class="cell tag_hide-input docutils container">
@@ -1790,7 +1790,7 @@ Podemos visualizá-los novamente. Observe que o gradiente parece diferente agora
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4495cd43b55348adb4f0c06f8b303fdc"}</script><img alt="../_images/baa94e0973290998b2d0ad746c243ca7d1c3d69bbc6a10d317982849db63b475.png" src="../_images/baa94e0973290998b2d0ad746c243ca7d1c3d69bbc6a10d317982849db63b475.png" />
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4495cd43b55348adb4f0c06f8b303fdc", "version_major": 2, "version_minor": 0}</script><img alt="../_images/baa94e0973290998b2d0ad746c243ca7d1c3d69bbc6a10d317982849db63b475.png" src="../_images/baa94e0973290998b2d0ad746c243ca7d1c3d69bbc6a10d317982849db63b475.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1886,7 +1886,7 @@ Podemos visualizá-los novamente. Observe que o gradiente parece diferente agora
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "925e4952fca44c1db48d3b8251329d09"}</script><img alt="../_images/d176e189fb6d165e6ad23a72c6dbf2957ea3c6bc5a0ccb1ffc98c1f4bf23f7ee.png" src="../_images/d176e189fb6d165e6ad23a72c6dbf2957ea3c6bc5a0ccb1ffc98c1f4bf23f7ee.png" />
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "925e4952fca44c1db48d3b8251329d09", "version_major": 2, "version_minor": 0}</script><img alt="../_images/d176e189fb6d165e6ad23a72c6dbf2957ea3c6bc5a0ccb1ffc98c1f4bf23f7ee.png" src="../_images/d176e189fb6d165e6ad23a72c6dbf2957ea3c6bc5a0ccb1ffc98c1f4bf23f7ee.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1915,8 +1915,8 @@ Podemos visualizá-los novamente. Observe que o gradiente parece diferente agora
 <li><p>The area under the PR curve (AUPRC) gives the <em>best overall</em> model</p></li>
 </ul>
 </section>
-<section id="selecao-de-modelo">
-<h4>Seleção de modelo<a class="headerlink" href="#selecao-de-modelo" title="Permalink to this heading">#</a></h4>
+<section id="id1">
+<h4>Seleção de modelo<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Alguns modelos podem alcançar compromissos que outros não conseguem</p></li>
 <li><p>Sua aplicação pode exigir recall muito alto (ou precisão muito alta)</p>
@@ -2045,7 +2045,7 @@ Podemos visualizá-los novamente. Observe que o gradiente parece diferente agora
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "bcabacae042f4f41a3b30adac344e96c"}</script><img alt="../_images/4b0cdd8077752138fe180c2c8de5a2805efe90a47beceb60d87fde163b6928bd.png" src="../_images/4b0cdd8077752138fe180c2c8de5a2805efe90a47beceb60d87fde163b6928bd.png" />
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "bcabacae042f4f41a3b30adac344e96c", "version_major": 2, "version_minor": 0}</script><img alt="../_images/4b0cdd8077752138fe180c2c8de5a2805efe90a47beceb60d87fde163b6928bd.png" src="../_images/4b0cdd8077752138fe180c2c8de5a2805efe90a47beceb60d87fde163b6928bd.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -2130,7 +2130,7 @@ Podemos visualizá-los novamente. Observe que o gradiente parece diferente agora
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f2077ef9b15e410195c67622dc48bb8b"}</script><img alt="../_images/e673f1a3921f4ddb53010a3af8626d61bdc587b2ca4ec2055e29c8af1b13d4a9.png" src="../_images/e673f1a3921f4ddb53010a3af8626d61bdc587b2ca4ec2055e29c8af1b13d4a9.png" />
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f2077ef9b15e410195c67622dc48bb8b", "version_major": 2, "version_minor": 0}</script><img alt="../_images/e673f1a3921f4ddb53010a3af8626d61bdc587b2ca4ec2055e29c8af1b13d4a9.png" src="../_images/e673f1a3921f4ddb53010a3af8626d61bdc587b2ca4ec2055e29c8af1b13d4a9.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -2148,8 +2148,8 @@ Podemos visualizá-los novamente. Observe que o gradiente parece diferente agora
 </details>
 </div>
 </section>
-<section id="id1">
-<h4>Model selection<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<section id="id2">
+<h4>Model selection<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Again, some models can achieve trade-offs that others can’t</p></li>
 <li><p>Your application may require minizing FPR (low FP), or maximizing TPR (low FN)</p></li>
@@ -2161,8 +2161,8 @@ Podemos visualizá-los novamente. Observe que o gradiente parece diferente agora
 </li>
 </ul>
 </section>
-<section id="id2">
-<h4>Seleção de modelo<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<section id="id3">
+<h4>Seleção de modelo<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Novamente, alguns modelos podem alcançar compromissos que outros não conseguem</p></li>
 <li><p>Sua aplicação pode exigir a minimização do FPR (baixo FP) ou a maximização do TPR (baixo FN)</p></li>
@@ -3417,7 +3417,7 @@ $<span class="math notranslate nohighlight">\(\text{total cost} = \text{FPR} * c
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-curve">Precision-Recall curve</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-recall-precisao">Curva recall - precisão</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection">Model selection</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selecao-de-modelo">Seleção de modelo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Seleção de modelo</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#efeitos-de-hiperparametros">Efeitos de hiperparâmetros</a></li>
 </ul>
 </li>
@@ -3425,8 +3425,8 @@ $<span class="math notranslate nohighlight">\(\text{total cost} = \text{FPR} * c
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-operacionais-do-receptor-roc">Características Operacionais do Receptor (ROC)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacao">Visualização</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Model selection</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Seleção de modelo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Model selection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Seleção de modelo</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-class-auroc-or-auprc">Multi-class AUROC (or AUPRC)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auroc-multiclasse-ou-auprc">AUROC multiclasse (ou AUPRC)</a></li>
 </ul>
